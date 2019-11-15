@@ -28,10 +28,9 @@ $(document).ready ( () => {
     // save btn on click
     $('.saveBtn').on('click', function(){
         localStorage.setItem('row - ' + $(this).prev('textarea').attr('i'), $(this).prev('textarea').val());
-        
     });
     //time based bg color
-    setInterval(bgTime, 60000);
+    setInterval(bgTime, 1000);
     function bgTime(){
         $('*[i]').each(function() {
             if(parseInt($(this).attr('i')) == time){
