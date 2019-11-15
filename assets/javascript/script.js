@@ -21,9 +21,9 @@ arr1.forEach(function(gen){
 })
 // localStorage
 $(document).ready ( () => {
+    bgTime();
     $('*[i]').each(function() {
         $(this).val(localStorage.getItem('row - ' + $(this).attr('i')));
-        bgTime();
     });
     // save btn on click
     $('.saveBtn').on('click', function(){
