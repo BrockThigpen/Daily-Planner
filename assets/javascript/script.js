@@ -9,10 +9,12 @@ arr1.forEach(function(gen){
     let newSaveBtn = $('<button>').addClass('saveBtn fas fa-save fa-lg')
     newRow.append(newHour, newTextarea, newSaveBtn);
     $('.container').append(newRow);
-    
 })
 // localStorage
 $(document).ready ( () => {
+    $('*[i]').each(function() {
+        $(this).val(localStorage.getItem('row - ' + $(this).attr('i')));
+    });
     // save btn on click
     $('.saveBtn').on('click', function(){
         localStorage.setItem('row - ' + $(this).prev('textarea').attr('i'), $(this).prev('textarea').val());
