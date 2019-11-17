@@ -6,13 +6,13 @@ $('#currentDay').text('Today is ' + moment().format("dddd" + ', ' + "MMM Do"));
 // generate new rows 
 arr1.forEach(function(gen){
     let newRow = $('<div>').addClass('row');
-    let newHour = $('<div>').addClass('hour text-center pt-4').text(gen);
+    let newHour = $('<div>').addClass('hour text-center pt-4');
     if(parseInt(gen) < 12){
-        $(newHour.text(gen + 'am'))
+        newHour.text(gen + 'am')
     }else if(parseInt(gen) > 12){
-        $(newHour.text(gen - 12 + 'pm'))
+        newHour.text(gen - 12 + 'pm')
     }else{
-        $(newHour.text(gen + 'pm'))
+        newHour.text(gen + 'pm')
     }
     let newTextarea = $('<textarea>').attr('i', gen);
     let newSaveBtn = $('<button>').addClass('saveBtn fas fa-save fa-lg')
